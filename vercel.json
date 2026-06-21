@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/anthropic/:path*",
+      "destination": "https://api.anthropic.com/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/anthropic/(.*)",
+      "headers": [
+        {
+          "key": "anthropic-dangerous-direct-browser-access",
+          "value": "true"
+        }
+      ]
+    }
+  ]
+}
